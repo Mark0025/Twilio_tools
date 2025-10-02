@@ -1,0 +1,173 @@
+{
+  "commands": {
+    "0": {
+      "name": "menu",
+      "description": "Interactive menu for Twilio CLI Tools",
+      "command": "menu",
+      "args": [],
+      "category": "Navigation"
+    },
+    "1": {
+      "name": "analyze-logs",
+      "description": "Analyze call logs from CSV files",
+      "command": "analyze-logs",
+      "args": [],
+      "category": "Call Logs"
+    },
+    "2": {
+      "name": "show-summary",
+      "description": "Show call summary statistics",
+      "command": "show-summary",
+      "args": [],
+      "category": "Call Logs"
+    },
+    "3": {
+      "name": "visualize-calls",
+      "description": "Visualize call volume (stub)",
+      "command": "visualize-calls",
+      "args": [],
+      "category": "Call Logs"
+    },
+    "4": {
+      "name": "lookup-error",
+      "description": "Lookup Twilio error code explanation",
+      "command": "lookup-error",
+      "args": ["error_code"],
+      "category": "Error Handling"
+    },
+    "5": {
+      "name": "trusthub-menu",
+      "description": "TrustHub Inspector submenu",
+      "command": "trusthub-menu",
+      "args": [],
+      "category": "TrustHub"
+    },
+    "6": {
+      "name": "list-profiles",
+      "description": "List all TrustHub customer profiles",
+      "command": "list-profiles",
+      "args": [],
+      "category": "TrustHub"
+    },
+    "7": {
+      "name": "inspect-profile",
+      "description": "Inspect specific TrustHub profile",
+      "command": "inspect-profile",
+      "args": ["profile_sid"],
+      "category": "TrustHub"
+    },
+    "8": {
+      "name": "list-subaccounts",
+      "description": "List all subaccounts and TrustHub status",
+      "command": "list-subaccounts",
+      "args": [],
+      "category": "TrustHub"
+    },
+    "9": {
+      "name": "search-subaccount",
+      "description": "Search subaccounts by number (e.g., '239')",
+      "command": "search-subaccount",
+      "args": ["account_number"],
+      "category": "TrustHub"
+    },
+    "10": {
+      "name": "delete-profile",
+      "description": "Delete TrustHub customer profile",
+      "command": "delete-profile",
+      "args": ["profile_sid"],
+      "category": "TrustHub"
+    },
+    "11": {
+      "name": "quick-search-239",
+      "description": "Quick search for subaccount containing '239'",
+      "command": "quick-search-239",
+      "args": [],
+      "category": "Quick Actions"
+    },
+    "12": {
+      "name": "profile-health-check",
+      "description": "Check health of all TrustHub profiles",
+      "command": "profile-health-check",
+      "args": [],
+      "category": "TrustHub"
+    },
+    "13": {
+      "name": "subaccount-overview",
+      "description": "Overview of all subaccounts with TrustHub status",
+      "command": "subaccount-overview",
+      "args": [],
+      "category": "TrustHub"
+    },
+    "14": {
+      "name": "export-profiles",
+      "description": "Export TrustHub profiles to JSON",
+      "command": "export-profiles",
+      "args": [],
+      "category": "TrustHub"
+    },
+    "15": {
+      "name": "phone-infoga-scan",
+      "description": "Scan phone number using PhoneInfoga tools",
+      "command": "phone-infoga-scan",
+      "args": ["phone_number"],
+      "category": "PhoneInfoga"
+    },
+    "16": {
+      "name": "phone-infoga-serve",
+      "description": "Start PhoneInfoga web server",
+      "command": "phone-infoga-serve",
+      "args": [],
+      "category": "PhoneInfoga"
+    },
+    "17": {
+      "name": "phone-infoga-version",
+      "description": "Show PhoneInfoga version information",
+      "command": "phone-infoga-version",
+      "args": [],
+      "category": "PhoneInfoga"
+    },
+    "18": {
+      "name": "phone-infoga-scanners",
+      "description": "List available PhoneInfoga scanners",
+      "command": "phone-infoga-scanners",
+      "args": [],
+      "category": "PhoneInfoga"
+    },
+    "19": {
+      "name": "phone-infoga-menu",
+      "description": "PhoneInfoga tools submenu",
+      "command": "phone-infoga-menu",
+      "args": [],
+      "category": "PhoneInfoga"
+    },
+    "20": {
+      "name": "production-accounts-overview",
+      "description": "Overview of production accounts with messaging campaigns and 10DLC status",
+      "command": "production-accounts-overview",
+      "args": [],
+      "category": "TrustHub Inspector"
+    }
+  },
+  "categories": {
+    "Navigation": "Basic navigation and menu options",
+    "Call Logs": "Call log analysis and visualization",
+    "Error Handling": "Twilio error code lookup and explanation",
+    "TrustHub": "TrustHub customer profile management",
+    "PhoneInfoga": "Phone number lookup and analysis tools",
+    "Quick Actions": "Pre-configured quick actions for common tasks"
+  },
+  "metadata": {
+    "version": "2.0.0",
+    "last_updated": "2024-12-19",
+    "total_commands": 20,
+    "description": "Comprehensive JSON index for Twilio CLI commands with PhoneInfoga integration",
+    "features": [
+      "TrustHub customer profile management",
+      "Phone number lookup and analysis",
+      "Call log analysis and visualization",
+      "Error code lookup and troubleshooting",
+      "Subaccount management and monitoring",
+      "PhoneInfoga tool integration"
+    ]
+  }
+}

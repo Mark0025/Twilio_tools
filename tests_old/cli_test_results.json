@@ -1,0 +1,8 @@
+[{"option": 1, "feature": "Analyze logs", "status": "success", "timestamp": "2025-07-18T20:44:16Z"},
+{"option": 2, "feature": "Show summary", "status": "success", "timestamp": "2025-07-18T20:44:16Z"},
+{"option": 3, "feature": "Visualize call volume", "status": "success", "timestamp": "2025-07-18T20:44:17Z"},
+{"option": 4, "feature": "Exit", "status": "success", "timestamp": "2025-07-18T20:44:17Z"}]
+{"option": "lookup_error_21610", "feature": "Lookup error 21610", "status": "fail", "timestamp": "2025-07-18T22:33:17Z"},
+{"option": "lookup_error_30006", "feature": "Lookup error 30006", "status": "fail", "timestamp": "2025-07-18T22:33:17Z"},
+{"option": "lookup_error_31002", "feature": "Lookup error 31002", "status": "fail", "timestamp": "2025-07-18T22:33:17Z"},
+{"option": "lookup_error_99999", "feature": "Lookup error 99999 (not found)", "status": "fail", "timestamp": "2025-07-18T22:33:17Z"},
