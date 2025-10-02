@@ -146,6 +146,41 @@
       "command": "production-accounts-overview",
       "args": [],
       "category": "TrustHub Inspector"
+    },
+    "21": {
+      "name": "dev-dashboard",
+      "description": "Show Dev_Man dashboard with project stats and plans",
+      "command": "dev-dashboard",
+      "args": [],
+      "category": "Dev_Man"
+    },
+    "22": {
+      "name": "dev-plans",
+      "description": "List development plans (completed/current/pending/all)",
+      "command": "dev-plans",
+      "args": ["category"],
+      "category": "Dev_Man"
+    },
+    "23": {
+      "name": "dev-view",
+      "description": "View a specific development plan",
+      "command": "dev-view",
+      "args": ["category", "index"],
+      "category": "Dev_Man"
+    },
+    "24": {
+      "name": "dev-search",
+      "description": "Search development plans",
+      "command": "dev-search",
+      "args": ["query"],
+      "category": "Dev_Man"
+    },
+    "25": {
+      "name": "dev-diagrams",
+      "description": "Show available Mermaid diagrams in plans",
+      "command": "dev-diagrams",
+      "args": [],
+      "category": "Dev_Man"
     }
   },
   "categories": {
@@ -154,12 +189,13 @@
     "Error Handling": "Twilio error code lookup and explanation",
     "TrustHub": "TrustHub customer profile management",
     "PhoneInfoga": "Phone number lookup and analysis tools",
-    "Quick Actions": "Pre-configured quick actions for common tasks"
+    "Quick Actions": "Pre-configured quick actions for common tasks",
+    "Dev_Man": "Development planning and project documentation browser"
   },
   "metadata": {
-    "version": "2.0.0",
-    "last_updated": "2024-12-19",
-    "total_commands": 20,
+    "version": "2.1.0",
+    "last_updated": "2025-10-02",
+    "total_commands": 26,
     "description": "Comprehensive JSON index for Twilio CLI commands with PhoneInfoga integration",
     "features": [
       "TrustHub customer profile management",

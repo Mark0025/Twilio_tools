@@ -33,6 +33,7 @@ from twilio_cli.api.trusthub_inspector import (
     render_subaccounts_table, render_subaccount_search_results,
     status_style, list_a2p_brands, list_a2p_campaigns, list_messaging_services
 )
+from twilio_cli.dev_man_browser import DevManBrowser
 
 # Initialize console and logging
 console = Console()
@@ -381,9 +382,32 @@ def execute_number_command(command_num, args=None):
             visualize_calls_command()
         elif command_name == "production-accounts-overview":
             production_accounts_overview_command()
+        # Dev_Man commands (21-25)
+        elif command_name == "dev-dashboard":
+            browser = DevManBrowser()
+            browser.show_dashboard()
+        elif command_name == "dev-plans":
+            browser = DevManBrowser()
+            category = args[0] if args else "all"
+            browser.list_plans(category)
+        elif command_name == "dev-view":
+            browser = DevManBrowser()
+            if args and len(args) >= 2:
+                browser.view_plan(args[0], int(args[1]))
+            else:
+                console.print("[red]Usage: python twilio_cli.py 23 <category> <index>[/red]")
+        elif command_name == "dev-search":
+            browser = DevManBrowser()
+            if args:
+                browser.search_plans(args[0])
+            else:
+                console.print("[red]Usage: python twilio_cli.py 24 <query>[/red]")
+        elif command_name == "dev-diagrams":
+            browser = DevManBrowser()
+            browser.show_mermaid_diagrams()
         else:
             console.print(f"[yellow]Command '{command_name}' not yet implemented for direct execution.[/yellow]")
-        
+
         return True
     except Exception as e:
         console.print(f"[bold red]Error executing command:[/bold red] {e}")
@@ -1149,9 +1173,66 @@ def production_accounts_overview():
             console.print(f"[dim]... and {len(prod_accounts) - 10} more production accounts[/dim]")
         
         console.print("=" * 60)
-        
+
     except Exception as exc:
         console.print(f"[bold red]Error getting production accounts overview:[/bold red] {exc}")
+
+
+# ===============================
+# Dev_Man Browser Commands
+# ===============================
+
+@cli.command("dev-dashboard")
+def dev_dashboard():
+    """Show Dev_Man dashboard with project stats and plans"""
+    browser = DevManBrowser()
+    browser.show_dashboard()
+
+
+@cli.command("dev-plans")
+@click.argument("category", default="all")
+def dev_plans(category):
+    """
+    List development plans by category.
+
+    CATEGORY: completed, current, pending, or all (default: all)
+    """
+    browser = DevManBrowser()
+    browser.list_plans(category)
+
+
+@cli.command("dev-view")
+@click.argument("category")
+@click.argument("index", type=int)
+def dev_view(category, index):
+    """
+    View a specific development plan.
+
+    CATEGORY: completed, current, or pending
+    INDEX: Plan number (0-indexed)
+    """
+    browser = DevManBrowser()
+    browser.view_plan(category, index)
+
+
+@cli.command("dev-search")
+@click.argument("query")
+def dev_search(query):
+    """
+    Search development plans.
+
+    QUERY: Search term
+    """
+    browser = DevManBrowser()
+    browser.search_plans(query)
+
+
+@cli.command("dev-diagrams")
+def dev_diagrams():
+    """Show available Mermaid diagrams in plans"""
+    browser = DevManBrowser()
+    browser.show_mermaid_diagrams()
+
 
 if __name__ == "__main__":
     # Check if first argument is a number (for number-based commands)
